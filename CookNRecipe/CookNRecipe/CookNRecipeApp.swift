@@ -18,9 +18,10 @@ struct CookNRecipeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(viewModel)
-                //initialise only in one place and can be used accross multiple screens
+//            ContentView()
+//                .environmentObject(viewModel)
+//                //initialise only in one place and can be used accross multiple screens
+            LaunchScreenView()
         }
     }
 }

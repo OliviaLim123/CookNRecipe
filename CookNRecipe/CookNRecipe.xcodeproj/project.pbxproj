@@ -22,6 +22,7 @@
 		CBF0F42B2C8468600061415A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CBF0F42A2C8468600061415A /* FirebaseFirestore */; };
 		CBF0F42D2C8468600061415A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CBF0F42C2C8468600061415A /* FirebaseStorage */; };
 		CBF0F42F2C8468AC0061415A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F42E2C8468AC0061415A /* AuthViewModel.swift */; };
+		CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4302C8477300061415A /* LaunchScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		CBF0F4232C8465BD0061415A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CBF0F4252C8467D10061415A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CBF0F42E2C8468AC0061415A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CBF0F4302C8477300061415A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				CBF0F41F2C84655C0061415A /* LoginView.swift */,
 				CBF0F4212C84658D0061415A /* RegistrationView.swift */,
 				CBF0F4232C8465BD0061415A /* ProfileView.swift */,
+				CBF0F4302C8477300061415A /* LaunchScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				CBF0F40B2C8462EB0061415A /* ContentView.swift in Sources */,
 				CBF0F41C2C8464EF0061415A /* InputView.swift in Sources */,
 				CBF0F4222C84658D0061415A /* RegistrationView.swift in Sources */,
+				CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */,
 				CBF0F4092C8462EB0061415A /* CookNRecipeApp.swift in Sources */,
 				CBF0F41A2C84641B0061415A /* User.swift in Sources */,
 				CBF0F41E2C8465260061415A /* SettingRowView.swift in Sources */,
