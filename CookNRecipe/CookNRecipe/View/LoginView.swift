@@ -16,12 +16,16 @@ struct LoginView: View {
         NavigationStack {
             VStack {
                 //Image
-                Image("star")
+                Image("cook")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 100, height: 120)
-                    .padding(.vertical, 32)
-                
+                    .padding(.vertical, 10)
+                Text("Cook N Recipe")
+                    .fontWeight(.bold)
+                    .foregroundStyle(.pink)
+                    .font(.title)
+                    .padding(.bottom, 25)
                 //Form Fields
                 VStack(spacing: 24) {
                     InputView(text: $email,
