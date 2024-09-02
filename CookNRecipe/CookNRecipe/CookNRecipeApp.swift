@@ -22,6 +22,7 @@ struct CookNRecipeApp: App {
 //                .environmentObject(viewModel)
 //                //initialise only in one place and can be used accross multiple screens
             LaunchScreenView()
+                .environmentObject(viewModel)
         }
     }
 }

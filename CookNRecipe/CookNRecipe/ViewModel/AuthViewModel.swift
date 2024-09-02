@@ -18,6 +18,7 @@ protocol AuthenticationFormProtocol {
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? //firebase user
     @Published var currentUser: User? //our user
+    @Published var isSignedOut: Bool = false
     
     init() {
         self.userSession = Auth.auth().currentUser // if there is the user log in, it will stay in the profile view
@@ -62,8 +63,17 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func deleteAccount() {
-        
+    func deleteAccount() async {
+        guard let user = Auth.auth().currentUser else { return }
+        let uid = user.uid
+        do {
+            try await Firestore.firestore().collection("users").document(uid).delete()
+            try await user.delete()
+            self.userSession = nil
+            self.currentUser = nil
+        } catch {
+            print("DEBUG: Failed to delete account with error \(error.localizedDescription)")
+        }
     }
     
     func fetchUser() async { // from the firebase account

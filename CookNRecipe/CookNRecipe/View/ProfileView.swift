@@ -8,6 +8,8 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var navigateToLogin = false
+    
     var body: some View {
         if let user = viewModel.currentUser {
             List {
@@ -55,7 +57,9 @@ struct ProfileView: View {
                                        tintColor: .red)
                     }
                     Button {
-                        print("Delete account")
+                        Task {
+                            await viewModel.deleteAccount()
+                        }
                     } label: {
                         SettingRowView(imageName: "xmark.circle.fill",
                                        title: "Delete Account",
@@ -63,6 +67,18 @@ struct ProfileView: View {
                     }
                 }
             }
+            .onAppear {
+                if viewModel.currentUser == nil {
+                    navigateToLogin = true
+                }
+            }
+            .fullScreenCover(isPresented: $navigateToLogin) {
+                LoginView()
+                    .environmentObject(viewModel)
+            }
+        } else {
+            LoginView()
+                .environmentObject(viewModel)
         }
     }
 }
