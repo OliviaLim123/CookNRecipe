@@ -1,0 +1,12 @@
+//
+//  Constants.swift
+//  CookNRecipe
+//
+//  Created by Olivia Gita Amanda Lim on 3/9/2024.
+//
+
+import Foundation
+
+enum Constants {
+    static var cookAnimation = "Animation - 1725359454310"
+}

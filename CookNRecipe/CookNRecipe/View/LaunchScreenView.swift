@@ -21,7 +21,7 @@ struct LaunchScreenView: View {
     var body: some View {
         //Navigates to the APP ENTRY VIEW after the LAUNCH SCREEN
         if isActive {
-            ContentView()
+            WelcomeView()
                 .environmentObject(AuthViewModel())
         } else {
             VStack {
