@@ -23,8 +23,7 @@ struct LaunchScreenView: View {
         //Navigates to the APP ENTRY VIEW after the LAUNCH SCREEN
         if isActive {
             if viewModel.userSession != nil {
-                ProfileView()
-                    .environmentObject(viewModel)
+                TabBarView()
             } else {
                 WelcomeView()
                     .environmentObject(viewModel)
