@@ -16,13 +16,19 @@ struct LaunchScreenView: View {
     @State private var size = 0.8
     //STATE variable to control the opacity of the view
     @State private var opacity = 0.5
+    @EnvironmentObject var viewModel: AuthViewModel
     
     //LAUNCH SCREEN VIEW
     var body: some View {
         //Navigates to the APP ENTRY VIEW after the LAUNCH SCREEN
         if isActive {
-            WelcomeView()
-                .environmentObject(AuthViewModel())
+            if viewModel.userSession != nil {
+                ProfileView()
+                    .environmentObject(viewModel)
+            } else {
+                WelcomeView()
+                    .environmentObject(viewModel)
+            }
         } else {
             VStack {
                 appLogo
@@ -63,4 +69,5 @@ struct LaunchScreenView: View {
 
 #Preview {
     LaunchScreenView()
+        .environmentObject(AuthViewModel())
 }
