@@ -19,6 +19,7 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? //firebase user
     @Published var currentUser: User? //our user
     @Published var isSignedOut: Bool = false
+    @Published var loginErrorMessage: String?
     
     init() {
         self.userSession = Auth.auth().currentUser // if there is the user log in, it will stay in the profile view
@@ -31,9 +32,11 @@ class AuthViewModel: ObservableObject {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            self.loginErrorMessage = nil
             await fetchUser()//without this, the profile view will be blank
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
+            self.loginErrorMessage = "Sorry, your account is invalid. Please Sign Up to continue!"
         }
     }
     

@@ -75,6 +75,16 @@ struct LoginView: View {
                     .font(.system(size: 14))
                 }
             }
+            .alert(isPresented: .constant(viewModel.loginErrorMessage != nil)){
+                Alert(
+                    title: Text("Login Failed"),
+                    message: Text(viewModel.loginErrorMessage ?? ""),
+                    dismissButton: .default(Text("OK")) {
+                        viewModel.loginErrorMessage = nil
+                    }
+                )
+            }
+            
         }
     }
 }
