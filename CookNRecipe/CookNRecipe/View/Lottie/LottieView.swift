@@ -28,12 +28,12 @@ struct LottieView: UIViewRepresentable {
         view.addSubview(animationView)
         
         NSLayoutConstraint.activate([
-//            animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
-//            animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
-            animationView.topAnchor.constraint(equalTo: view.topAnchor), // Anchor to top
-            animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor), // Anchor to bottom
-            animationView.leadingAnchor.constraint(equalTo: view.leadingAnchor), // Anchor to leading
-            animationView.trailingAnchor.constraint(equalTo: view.trailingAnchor) // Anchor to trailing
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
+//            animationView.topAnchor.constraint(equalTo: view.topAnchor), // Anchor to top
+//            animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor), // Anchor to bottom
+//            animationView.leadingAnchor.constraint(equalTo: view.leadingAnchor), // Anchor to leading
+//            animationView.trailingAnchor.constraint(equalTo: view.trailingAnchor) // Anchor to trailing
         ])
         return view }
     

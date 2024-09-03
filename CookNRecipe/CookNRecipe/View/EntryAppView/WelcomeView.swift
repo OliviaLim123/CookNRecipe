@@ -25,7 +25,7 @@ struct WelcomeView: View {
                 LottieView(name: Constants.cookAnimation, loopMode: .loop, animationSpeed: 0.7)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-                Text("With Cook N Recipe, you can exploring new recipes, search food based on your ingredient, add your own recipe, and learn how to cook step by step! ")
+                Text("Let's exploring new recipes, searching food based on your ingredient, creating your own recipe, and learning how to cook step by step! ")
                     .font(.subheadline)
                     .padding(.bottom,40)
                     .padding(.horizontal)

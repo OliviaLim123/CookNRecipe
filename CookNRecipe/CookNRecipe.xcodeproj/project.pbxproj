@@ -76,6 +76,19 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		CB3756BC2C872BB0009BC05A /* EntryAppView */ = {
+			isa = PBXGroup;
+			children = (
+				CBF0F4302C8477300061415A /* LaunchScreenView.swift */,
+				CB3756B82C871DF1009BC05A /* WelcomeView.swift */,
+				CBF0F40A2C8462EB0061415A /* ContentView.swift */,
+				CBF0F41F2C84655C0061415A /* LoginView.swift */,
+				CBF0F4212C84658D0061415A /* RegistrationView.swift */,
+				CBF0F41B2C8464EF0061415A /* InputView.swift */,
+			);
+			path = EntryAppView;
+			sourceTree = "<group>";
+		};
 		CBF0F3FC2C8462EB0061415A = {
 			isa = PBXGroup;
 			children = (
@@ -133,14 +146,9 @@
 		CBF0F4182C8463EB0061415A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CBF0F40A2C8462EB0061415A /* ContentView.swift */,
-				CBF0F41B2C8464EF0061415A /* InputView.swift */,
-				CBF0F41D2C8465260061415A /* SettingRowView.swift */,
-				CBF0F41F2C84655C0061415A /* LoginView.swift */,
-				CBF0F4212C84658D0061415A /* RegistrationView.swift */,
+				CB3756BC2C872BB0009BC05A /* EntryAppView */,
 				CBF0F4232C8465BD0061415A /* ProfileView.swift */,
-				CBF0F4302C8477300061415A /* LaunchScreenView.swift */,
-				CB3756B82C871DF1009BC05A /* WelcomeView.swift */,
+				CBF0F41D2C8465260061415A /* SettingRowView.swift */,
 				CB3756B22C871C09009BC05A /* Lottie */,
 			);
 			path = View;
