@@ -27,10 +27,11 @@ struct TabBarView: View {
                     Label("Saved", systemImage: "bookmark")
                 }
             ProfileView()
+                .environmentObject(AuthViewModel())
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
                 }
-                .environmentObject(AuthViewModel())
+//                .environmentObject(AuthViewModel())
         }
     }
 }

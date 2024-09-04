@@ -12,11 +12,14 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if viewModel.userSession != nil {
+            if viewModel.isLoggedIn {
                 TabBarView() // if there is the user before, go back to the profile
             } else {
                 LoginView() // if it is not log in yet, go to the login view
             }
+        }
+        .onAppear {
+            viewModel.isLoggedIn = viewModel.userSession != nil
         }
     }
 }
