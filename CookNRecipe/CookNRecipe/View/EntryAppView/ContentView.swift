@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
@@ -17,9 +18,6 @@ struct ContentView: View {
             } else {
                 LoginView() // if it is not log in yet, go to the login view
             }
-        }
-        .onAppear {
-            viewModel.isLoggedIn = viewModel.userSession != nil
         }
     }
 }

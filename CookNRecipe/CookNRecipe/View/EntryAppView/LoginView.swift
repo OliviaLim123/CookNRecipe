@@ -44,6 +44,10 @@ struct LoginView: View {
                 Button {
                     Task {
                         try await viewModel.signIn(withEmail: email, password: password)
+//                        if viewModel.isLoggedIn {
+//                            
+//                            print("DEBUG: Navigating to TabBarView")
+//                        }
                     }
                 } label: {
                     HStack {

@@ -51,6 +51,7 @@ struct ProfileView: View {
                 Section("Account") {
                     Button {
                         viewModel.signOut()
+                        navigateToLogin = true
                     } label: {
                         SettingRowView(imageName: "arrow.left.circle.fill",
                                        title: "Sign Out",
@@ -59,6 +60,7 @@ struct ProfileView: View {
                     Button {
                         Task {
                             await viewModel.deleteAccount()
+                            navigateToLogin = true
                         }
                     } label: {
                         SettingRowView(imageName: "xmark.circle.fill",
@@ -67,13 +69,8 @@ struct ProfileView: View {
                     }
                 }
             }
-            .onAppear {
-                if viewModel.currentUser == nil {
-                    navigateToLogin = true
-                }
-            }
             .fullScreenCover(isPresented: $navigateToLogin) {
-                LoginView()
+                ContentView()
                     .environmentObject(viewModel)
             }
         } else {

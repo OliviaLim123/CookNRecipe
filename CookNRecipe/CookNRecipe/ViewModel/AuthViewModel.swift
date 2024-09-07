@@ -16,13 +16,23 @@ protocol AuthenticationFormProtocol {
 
 @MainActor // publishing back to the main
 class AuthViewModel: ObservableObject {
-    @Published var userSession: FirebaseAuth.User? //firebase user
+    @Published var userSession: FirebaseAuth.User? {//firebase user
+        didSet {
+            self.isLoggedIn = userSession != nil // Automatically update isLoggedIn when userSession changes
+        }
+    }
     @Published var currentUser: User? //our user
-    @Published var isLoggedIn: Bool = false
+    @Published var isLoggedIn: Bool = false {
+        didSet {
+            objectWillChange.send() // manually trigger the view 
+        }
+    }
     @Published var loginErrorMessage: String?
     
     init() {
+        checkUserSession()
         self.userSession = Auth.auth().currentUser // if there is the user log in, it will stay in the profile view
+        self.isLoggedIn = userSession != nil
         Task {
             await fetchUser()
         }
@@ -32,8 +42,8 @@ class AuthViewModel: ObservableObject {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
-            self.loginErrorMessage = nil
             self.isLoggedIn = true
+            self.loginErrorMessage = nil
             await fetchUser()//without this, the profile view will be blank
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
@@ -86,5 +96,16 @@ class AuthViewModel: ObservableObject {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
         self.currentUser = try? snapshot.data(as: User.self)
+    }
+    
+    func checkUserSession() {
+        if let currentUser = Auth.auth().currentUser {
+            print ("DEBUG: user is logged in")
+            self.userSession = currentUser
+            self.isLoggedIn = true
+        } else {
+            print("DEBUG: No user logged in")
+            self.isLoggedIn = false
+        }
     }
 }
