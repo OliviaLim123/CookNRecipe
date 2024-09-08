@@ -22,6 +22,8 @@
 		CB80ADF22C8D580E00EF082F /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADF12C8D580E00EF082F /* RecipeCardView.swift */; };
 		CB80ADF42C8D582E00EF082F /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADF32C8D582E00EF082F /* RecipeListView.swift */; };
 		CB80ADFB2C8D6EA200EF082F /* JsonBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADFA2C8D6EA200EF082F /* JsonBundle.swift */; };
+		CB80ADFD2C8D732C00EF082F /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADFC2C8D732C00EF082F /* RecipeDetailView.swift */; };
+		CB80ADFF2C8D7E4400EF082F /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */; };
 		CBB44AF72C87E303003582F1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB44AF62C87E303003582F1 /* SettingView.swift */; };
 		CBF0F4092C8462EB0061415A /* CookNRecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4082C8462EB0061415A /* CookNRecipeApp.swift */; };
 		CBF0F40B2C8462EB0061415A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F40A2C8462EB0061415A /* ContentView.swift */; };
@@ -56,6 +58,8 @@
 		CB80ADF12C8D580E00EF082F /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		CB80ADF32C8D582E00EF082F /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		CB80ADFA2C8D6EA200EF082F /* JsonBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonBundle.swift; sourceTree = "<group>"; };
+		CB80ADFC2C8D732C00EF082F /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		CBB44AF62C87E303003582F1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		CBF0F4052C8462EB0061415A /* CookNRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookNRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF0F4082C8462EB0061415A /* CookNRecipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookNRecipeApp.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			children = (
 				CB80ADF12C8D580E00EF082F /* RecipeCardView.swift */,
 				CB80ADF32C8D582E00EF082F /* RecipeListView.swift */,
+				CB80ADFC2C8D732C00EF082F /* RecipeDetailView.swift */,
 			);
 			path = AllRecipesView;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				CB3756CF2C873D09009BC05A /* TabBarView.swift */,
 				CBB44AF62C87E303003582F1 /* SettingView.swift */,
 				CB3756B22C871C09009BC05A /* Lottie */,
+				CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			files = (
 				CBF0F4242C8465BD0061415A /* ProfileView.swift in Sources */,
 				CB3756C82C873CC4009BC05A /* HomeView.swift in Sources */,
+				CB80ADFF2C8D7E4400EF082F /* AddRecipeView.swift in Sources */,
 				CBF0F4202C84655C0061415A /* LoginView.swift in Sources */,
 				CB80ADF22C8D580E00EF082F /* RecipeCardView.swift in Sources */,
 				CBF0F40B2C8462EB0061415A /* ContentView.swift in Sources */,
@@ -301,6 +308,7 @@
 				CBF0F4092C8462EB0061415A /* CookNRecipeApp.swift in Sources */,
 				CB3756B92C871DF1009BC05A /* WelcomeView.swift in Sources */,
 				CB80ADFB2C8D6EA200EF082F /* JsonBundle.swift in Sources */,
+				CB80ADFD2C8D732C00EF082F /* RecipeDetailView.swift in Sources */,
 				CBF0F41A2C84641B0061415A /* User.swift in Sources */,
 				CBF0F41E2C8465260061415A /* SettingRowView.swift in Sources */,
 				CB3756B12C871BFA009BC05A /* LottieView.swift in Sources */,

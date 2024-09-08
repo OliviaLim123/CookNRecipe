@@ -9,12 +9,16 @@ import SwiftUI
 
 //List all the recipes
 struct HomeView: View {
-    @StateObject var recipeVM = RecipeViewModel()
+//    @StateObject var recipeVM = RecipeViewModel()
     
     var body: some View {
         NavigationView {
-            Text("Home View")
+            ScrollView{
+                RecipeListView(recipes: Recipe.all)
+            }
+            .navigationTitle("All Recipes")
         }
+        .navigationViewStyle(.stack)
     }
 }
 

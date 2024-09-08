@@ -32,8 +32,10 @@ struct Recipe: Identifiable, Codable {
     let readyInMinutes: Int?
     let servings: Int?
     let summary: String?
-    let ingredients: [Ingredient]
-    let instructions: [InstructionWrapper]
+    let ingredients: String
+    let instructions: String
+//    let ingredients: [Ingredient]
+//    let instructions: [InstructionWrapper]
     
     enum CodingKeys: String, CodingKey {
         case id, title, image, readyInMinutes, servings, summary
@@ -43,26 +45,29 @@ struct Recipe: Identifiable, Codable {
 }
 //mock sample of recipe 
 extension Recipe{
-    static let mockRecipe = Recipe(
+    static let all: [Recipe] = [
+        Recipe(
             id: 1,
             title: "Creamy Carrot Soup",
             image: "https://www.forksoverknives.com/wp-content/uploads/fly-images/98892/Creamy-Carrot-Soup-for-Wordpress-360x720-c.jpg",
             readyInMinutes: 25,
             servings: 4,
             summary: "This bold-hued soup is perfectly sweet and seriously comforting.",
-            ingredients: [
-                Ingredient(id: 1, name: "Carrot", amount: 10, unit: "pounds"),
-                Ingredient(id: 2, name: "Garlic", amount: 4, unit: "cloves")
-            ],
-            instructions: [
-                InstructionWrapper(steps: [
-                    Instruction(number: 1, step: "Cover the cashews with 1/2 cup hot water."),
-                    Instruction(number: 2, step: "Let soak for 20 minutes.")
-                ])
-            ]
-        )
+            ingredients: "10 pounds of carrot \n2 cloves of Garlic \n10 gram of mushroom",
+            instructions: "1. Cover the cashews with 1/2 cup of hot water \n2. Let soak for 20 minutes"
+        ),
+        Recipe(
+            id: 2,
+            title: "Spagetti Carbonara",
+            image: "https://www.sipandfeast.com/wp-content/uploads/2022/09/spaghetti-carbonara-recipe-6.jpg",
+            readyInMinutes: 25,
+            servings: 2,
+            summary: "A classic Italian Spaghetti and easy to make at home.",
+            ingredients: "100 gram of Spaghetti \n100 gram of bacon \n1 block of cheese \n10 gram of Parsley",
+            instructions: "1. Boil the pasta 30 mins \n2. Fry the bacons "
+        )]
 }
-struct Ingredient: Codable {
+struct Ingredient: Identifiable, Codable {
     let id: Int
     let name: String
     let amount: Double

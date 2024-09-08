@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    @StateObject var recipeVM: RecipeViewModel = RecipeViewModel()
+//    @StateObject var recipeVM: RecipeViewModel = RecipeViewModel()
+    var recipes: [Recipe]
     
     var body: some View {
         VStack {
             HStack {
-                Text("\(recipeVM.recipes.count) \(recipeVM.recipes.count > 1 ? "recipes" : "recipe")")
+                Text("\(recipes.count) \(recipes.count > 1 ? "recipes" : "recipe")")
                     .font(.headline)
                     .fontWeight(.medium)
                     .opacity(0.7)
@@ -22,8 +23,10 @@ struct RecipeListView: View {
             }
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                    ForEach(recipeVM.recipes) { recipe in
-                        RecipeCardView(recipe: recipe)
+                    ForEach(recipes) { recipe in
+                        NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                            RecipeCardView(recipe: recipe)
+                        }
                     }
                 }
                 .padding(.top)
@@ -48,7 +51,6 @@ struct RecipeListView: View {
 
 #Preview {
     ScrollView {
-        RecipeListView()
-            .environmentObject(RecipeViewModel())
+        RecipeListView(recipes: Recipe.all)
     }
 }
