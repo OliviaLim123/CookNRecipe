@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+//List all the recipes
 struct HomeView: View {
+    @StateObject var recipeVM = RecipeViewModel()
+    
     var body: some View {
         NavigationView {
             Text("Home View")
