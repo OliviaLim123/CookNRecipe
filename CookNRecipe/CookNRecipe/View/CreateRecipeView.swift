@@ -23,7 +23,7 @@ struct CreateRecipeView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                         ForEach(ownRecipeVM.myRecipes) { recipe in
-                            NavigationLink(destination: MyRecipesView(recipe: recipe)) {
+                            NavigationLink(destination: MyRecipesDetailView(recipe: recipe)) {
                                 OwnRecipeCardView(recipe: recipe)
                             }
                         }
@@ -34,8 +34,18 @@ struct CreateRecipeView: View {
                 Button {
                     showAddRecipe = true
                 } label: {
-                    Text("Add Your Own Recipe!")
+                    HStack {
+                        Text("ADD YOUR RECIPE")
+                            .fontWeight(.semibold)
+                        Image(systemName: "doc.badge.plus")
+                    }
+                    .foregroundStyle(.white)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                 }
+                .background(Color(.systemPink))
+                .cornerRadius(10)
+                .padding(.top, 24)
+                .padding(.horizontal, 20)
                 .navigationViewStyle(.stack)
                 .fullScreenCover(isPresented: $showAddRecipe){
                     AddRecipeView()

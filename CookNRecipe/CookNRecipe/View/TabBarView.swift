@@ -32,7 +32,6 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
                 }
-//                .environmentObject(AuthViewModel())
         }
     }
 }

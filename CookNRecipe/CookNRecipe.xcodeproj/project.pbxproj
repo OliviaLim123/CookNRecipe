@@ -24,8 +24,9 @@
 		CB80ADFF2C8D7E4400EF082F /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */; };
 		CB80AE012C8DA16100EF082F /* OwnRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE002C8DA16100EF082F /* OwnRecipe.swift */; };
 		CB80AE032C8DB1AF00EF082F /* OwnRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE022C8DB1AF00EF082F /* OwnRecipeViewModel.swift */; };
-		CB80AE052C8DB5A800EF082F /* MyRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE042C8DB5A800EF082F /* MyRecipesView.swift */; };
+		CB80AE052C8DB5A800EF082F /* MyRecipesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE042C8DB5A800EF082F /* MyRecipesDetailView.swift */; };
 		CB80AE072C8DB60100EF082F /* OwnRecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE062C8DB60100EF082F /* OwnRecipeCardView.swift */; };
+		CB80AE092C8DBA7100EF082F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE082C8DBA7100EF082F /* ImagePicker.swift */; };
 		CBB44AF72C87E303003582F1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB44AF62C87E303003582F1 /* SettingView.swift */; };
 		CBF0F4092C8462EB0061415A /* CookNRecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4082C8462EB0061415A /* CookNRecipeApp.swift */; };
 		CBF0F40B2C8462EB0061415A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F40A2C8462EB0061415A /* ContentView.swift */; };
@@ -62,8 +63,9 @@
 		CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		CB80AE002C8DA16100EF082F /* OwnRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnRecipe.swift; sourceTree = "<group>"; };
 		CB80AE022C8DB1AF00EF082F /* OwnRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnRecipeViewModel.swift; sourceTree = "<group>"; };
-		CB80AE042C8DB5A800EF082F /* MyRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipesView.swift; sourceTree = "<group>"; };
+		CB80AE042C8DB5A800EF082F /* MyRecipesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipesDetailView.swift; sourceTree = "<group>"; };
 		CB80AE062C8DB60100EF082F /* OwnRecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnRecipeCardView.swift; sourceTree = "<group>"; };
+		CB80AE082C8DBA7100EF082F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CBB44AF62C87E303003582F1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		CBF0F4052C8462EB0061415A /* CookNRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookNRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF0F4082C8462EB0061415A /* CookNRecipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookNRecipeApp.swift; sourceTree = "<group>"; };
@@ -201,8 +203,9 @@
 				CBB44AF62C87E303003582F1 /* SettingView.swift */,
 				CB3756B22C871C09009BC05A /* Lottie */,
 				CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */,
-				CB80AE042C8DB5A800EF082F /* MyRecipesView.swift */,
+				CB80AE042C8DB5A800EF082F /* MyRecipesDetailView.swift */,
 				CB80AE062C8DB60100EF082F /* OwnRecipeCardView.swift */,
+				CB80AE082C8DBA7100EF082F /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,10 +305,11 @@
 				CB80AE012C8DA16100EF082F /* OwnRecipe.swift in Sources */,
 				CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */,
 				CB3756CC2C873CE1009BC05A /* CreateRecipeView.swift in Sources */,
-				CB80AE052C8DB5A800EF082F /* MyRecipesView.swift in Sources */,
+				CB80AE052C8DB5A800EF082F /* MyRecipesDetailView.swift in Sources */,
 				CBB44AF72C87E303003582F1 /* SettingView.swift in Sources */,
 				CB3756D02C873D09009BC05A /* TabBarView.swift in Sources */,
 				CB80AE032C8DB1AF00EF082F /* OwnRecipeViewModel.swift in Sources */,
+				CB80AE092C8DBA7100EF082F /* ImagePicker.swift in Sources */,
 				CBF0F4092C8462EB0061415A /* CookNRecipeApp.swift in Sources */,
 				CB3756B92C871DF1009BC05A /* WelcomeView.swift in Sources */,
 				CB80AE072C8DB60100EF082F /* OwnRecipeCardView.swift in Sources */,

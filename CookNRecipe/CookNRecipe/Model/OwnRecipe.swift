@@ -23,7 +23,7 @@ enum Category: String, CaseIterable, Identifiable {
 struct OwnRecipe: Identifiable {
     let id = UUID()
     let name: String
-    let image: String
+    let image: Data?
     let description: String
     let ingredients: String
     let instructions: String

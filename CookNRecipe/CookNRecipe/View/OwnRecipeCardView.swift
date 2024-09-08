@@ -13,9 +13,10 @@ struct OwnRecipeCardView: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: recipe.image)){ image in
-                image
+            if let imageData = recipe.image, let uiImage = UIImage(data: imageData) {
+                Image (uiImage: uiImage)
                     .resizable()
+                    .scaledToFit()
                     .aspectRatio(contentMode: .fill)
                     .overlay(alignment: .bottom){
                         Text(recipe.name)
@@ -27,7 +28,7 @@ struct OwnRecipeCardView: View {
                             .padding()
                         
                     }
-            } placeholder: {
+            } else {
                 Image(systemName: "photo")
                     .resizable()
                     .scaledToFit()
@@ -55,7 +56,7 @@ struct OwnRecipeCardView: View {
 #Preview {
   OwnRecipeCardView(recipe: OwnRecipe(
     name: "Mock Recipe",
-    image: "",
+    image: nil,
     description: "example",
     ingredients: "Testing",
     instructions: "hello",

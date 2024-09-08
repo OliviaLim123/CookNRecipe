@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct AddRecipeView: View {
     @State private var name: String = ""
-    @State private var image: String = ""
+    @State private var image: UIImage? = nil
     @State private var selectedCategory: Category = Category.main
     @State private var description: String = ""
     @State private var ingredients: String = ""
     @State private var instructions: String = ""
+    @State private var showImagePicker: Bool = false
+    @State private var imageSourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var navigateToRecipe: Bool = false
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var ownRecipeVM: OwnRecipeViewModel
@@ -38,6 +41,24 @@ struct AddRecipeView: View {
                             }
                         }
                         .pickerStyle(.menu)
+                    }
+                    Section(header: Text("Image")) {
+                        if let image = image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200)
+                        } else {
+                            Text("No image selected")
+                                .foregroundStyle(.gray)
+                        }
+                        HStack {
+                            Button("Pick from Library") {
+                                imageSourceType = .photoLibrary
+                                showImagePicker = true
+                            }
+                        }
+
                     }
                     Section(header: Text("Description")){
                         TextEditor(text: $description)
@@ -87,6 +108,9 @@ struct AddRecipeView: View {
 
             }
         }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(sourceType: imageSourceType, selectedImage: $image)
+        }
         .navigationViewStyle(.stack)
     }
 }
@@ -104,8 +128,9 @@ extension AddRecipeView {
         dateFormatter.dateFormat = "yyyy-mm-dd"
         let datePublished = dateFormatter.string(from: now)
         print(datePublished)
+        let imageData = image?.jpegData(compressionQuality: 0.8) ?? Data()
         let recipe = OwnRecipe(
-            name: name, image: "",
+            name: name, image: imageData,
             description: description,
             ingredients: ingredients,
             instructions: instructions,
