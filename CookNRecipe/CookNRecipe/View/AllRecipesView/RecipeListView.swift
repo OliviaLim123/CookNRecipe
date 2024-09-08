@@ -8,7 +8,7 @@
 import SwiftUI
 
 //List all the recipes
-struct HomeView: View {
+struct RecipeListView: View {
     @StateObject var recipeVM = RecipeViewModel()
     
     var body: some View {
@@ -47,5 +47,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    RecipeListView()
 }

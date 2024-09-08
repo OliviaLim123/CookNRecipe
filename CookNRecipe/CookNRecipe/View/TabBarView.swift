@@ -10,9 +10,9 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            HomeView()
+            RecipeListView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("Catalogue", systemImage: "book.pages.fill")
                 }
             SearchRecipeView()
                 .tabItem {
