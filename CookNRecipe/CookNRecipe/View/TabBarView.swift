@@ -19,6 +19,7 @@ struct TabBarView: View {
                     Label("Search", systemImage: "magnifyingglass")
                 }
             CreateRecipeView()
+                .environmentObject(OwnRecipeViewModel())
                 .tabItem {
                     Label("Create", systemImage: "plus.square.fill")
                 }

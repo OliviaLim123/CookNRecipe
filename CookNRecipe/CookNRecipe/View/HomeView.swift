@@ -40,7 +40,7 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            recipeVM.fetchRecipes()
+//            recipeVM.fetchRecipes()
         }
         .padding(.horizontal)
     }

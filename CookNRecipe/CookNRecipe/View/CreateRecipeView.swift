@@ -8,13 +8,46 @@
 import SwiftUI
 
 struct CreateRecipeView: View {
+    @State private var showAddRecipe = false
+    @EnvironmentObject var ownRecipeVM : OwnRecipeViewModel
+    
     var body: some View {
         NavigationView {
-            Text("Create Recipe View ")
+            VStack(alignment: .leading){
+                Text("My Recipes")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.pink)
+                    .multilineTextAlignment(.leading)
+                    .padding(.horizontal, 20)
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+                        ForEach(ownRecipeVM.myRecipes) { recipe in
+                            NavigationLink(destination: MyRecipesView(recipe: recipe)) {
+                                OwnRecipeCardView(recipe: recipe)
+                            }
+                        }
+                    }
+                    .padding(.top)
+                }
+                Spacer()
+                Button {
+                    showAddRecipe = true
+                } label: {
+                    Text("Add Your Own Recipe!")
+                }
+                .navigationViewStyle(.stack)
+                .fullScreenCover(isPresented: $showAddRecipe){
+                    AddRecipeView()
+                        .environmentObject(ownRecipeVM)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
     }
 }
 
 #Preview {
     CreateRecipeView()
+        .environmentObject(OwnRecipeViewModel())
 }
