@@ -53,5 +53,21 @@ struct RecipeCardView: View {
 }
 
 #Preview {
-    RecipeCardView(recipe: Recipe.all[0])
+    RecipeCardView(recipe: Recipe(
+        id: 1,
+        title: "Example",
+        image: "",
+        readyInMinutes: 20,
+        servings: 2,
+        summary: "just a mock example",
+        extendedIngredients: [
+            Ingredient(id: 1, name: "Carrot", amount: 3.0, unit: "pcs"),
+            Ingredient(id: 2, name: "Garlic", amount: 2.0, unit: "cloves")
+        ], 
+        analyzedInstructions: [
+            InstructionWrapper(steps: [
+                Instruction(number: 1, step: "Chop the carrots."),
+                Instruction(number: 2, step: "Boil them for 10 minutes.")
+            ])
+        ]))
 }
