@@ -10,10 +10,10 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            RecipeListView()
-                .tabItem {
-                    Label("Catalogue", systemImage: "book.pages.fill")
-                }
+//            RecipeListView()
+//                .tabItem {
+//                    Label("Catalogue", systemImage: "book.pages.fill")
+//                }
             SearchRecipeView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")

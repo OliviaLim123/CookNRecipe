@@ -13,4 +13,7 @@ class OwnRecipeViewModel: ObservableObject {
     func addRecipe(recipe: OwnRecipe){
         myRecipes.append(recipe)
     }
+    func deleteRecipe(at indexSet: IndexSet) {
+        myRecipes.remove(atOffsets: indexSet)
+    }
 }

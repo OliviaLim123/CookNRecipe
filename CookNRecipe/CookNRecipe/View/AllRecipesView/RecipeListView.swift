@@ -9,12 +9,12 @@ import SwiftUI
 
 //List all the recipes
 struct RecipeListView: View {
-    @StateObject var recipeVM = RecipeViewModel()
+    @ObservedObject var recipeVM = RecipeViewModel()
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
-                Text("All Recipes")
+                Text("Recipe Results")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(.pink)
@@ -32,15 +32,15 @@ struct RecipeListView: View {
                         ForEach(recipeVM.recipes) { recipe in
                             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                                 RecipeCardView(recipe: recipe)
+//                                    .task {
+//                                        await recipeVM.fetchRecipeDetails(recipeId: recipe.id)
+//                                    }
                             }
                         }
                     }
                     .padding(.top)
                 }
             }
-        }
-        .onAppear {
-//            recipeVM.fetchRecipes()
         }
         .padding(.horizontal)
     }
