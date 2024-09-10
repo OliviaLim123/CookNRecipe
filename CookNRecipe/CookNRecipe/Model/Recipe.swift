@@ -24,22 +24,6 @@ struct Recipe: Identifiable, Codable {
 
 }
 
-struct RecipeDetail: Codable {
-    let id: Int
-    let title: String
-    let image: String?
-    let readyInMinutes: Int?
-    let servings: Int?
-    let summary: String?
-    let extendedIngredients: [Ingredient]?
-    let analyzedInstructions: [InstructionWrapper]?
-    
-    enum CodingKeys: String, CodingKey {
-        case id, title, image, readyInMinutes, servings, summary
-        case extendedIngredients, analyzedInstructions
-    }
-}
-
 struct Ingredient: Codable, Identifiable {
     let id: Int
     let name: String

@@ -13,7 +13,7 @@ struct RecipeDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                if let recipeDetail = recipeVM.selectedRecipeDetail {
+                if let recipeDetail = recipeVM.selectedRecipe {
                     Text(recipeDetail.title)
                         .font(.largeTitle)
                         .bold()
@@ -25,7 +25,6 @@ struct RecipeDetailView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                         } placeholder: {
-//                            ProgressView()
                             Image(systemName: "photo")
                                 .resizable()
                                 .scaledToFit()
@@ -84,7 +83,6 @@ struct RecipeDetailView: View {
                 }
             }
         }
-//        .padding()
     }
 }
 extension Double {
