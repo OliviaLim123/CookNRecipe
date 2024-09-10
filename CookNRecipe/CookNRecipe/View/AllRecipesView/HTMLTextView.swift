@@ -18,6 +18,19 @@ struct HTMLTextView: UIViewRepresentable {
         return textView
     }
 
+//    func updateUIView(_ textView: UITextView, context: Context) {
+//        if let attributedString = htmlContent.htmlToAttributedString {
+//            let mutableAttributedString = NSMutableAttributedString(attributedString: attributedString)
+//            
+//            // Apply a system font that matches SwiftUI default Text font
+//            let font = UIFont.preferredFont(forTextStyle: .body)
+//            mutableAttributedString.addAttributes([.font: font], range: NSRange(location: 0, length: mutableAttributedString.length))
+//            
+//            textView.attributedText = mutableAttributedString
+//        } else {
+//            textView.text = htmlContent
+//        }
+//    }
     func updateUIView(_ textView: UITextView, context: Context) {
         if let attributedString = htmlContent.htmlToAttributedString {
             let mutableAttributedString = NSMutableAttributedString(attributedString: attributedString)
@@ -28,7 +41,8 @@ struct HTMLTextView: UIViewRepresentable {
             
             textView.attributedText = mutableAttributedString
         } else {
-            textView.text = htmlContent
+            print("Failed to convert HTML to NSAttributedString")
+            textView.text = "Invalid HTML content"
         }
     }
 }

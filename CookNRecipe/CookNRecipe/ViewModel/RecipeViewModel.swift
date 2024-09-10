@@ -10,6 +10,7 @@ class RecipeViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
     @Published var selectedRecipe: Recipe?
     @Published var isLoading = true
+    @Published var selectedRecipeDetail: RecipeDetail?
     
     private let recipeURL = "https://api.spoonacular.com/recipes"
     private let apiKey = "6fad4f0efbc848e3a9c4f359a6623cbc"
@@ -91,15 +92,19 @@ class RecipeViewModel: ObservableObject {
         }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-            if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
-                print(json)
-            }
-            let recipeDetails = try JSONDecoder().decode(Recipe.self, from: data)
+            print("API Call successful, raw data: \(data)")
+            let recipeDetails = try JSONDecoder().decode(RecipeDetail.self, from: data)
+            print("Decoded recipe details: \(recipeDetails)") 
             DispatchQueue.main.async {
-                self.selectedRecipe = recipeDetails
+//                self.selectedRecipe = recipeDetails
+                self.selectedRecipeDetail = recipeDetails
+                self.isLoading = false
             }
         } catch {
             print("Error fetching recipe details: \(error)")
+            DispatchQueue.main.async {
+                self.isLoading = false 
+            }
         }
     }
 //    func performRequestDetails(url: URL) {

@@ -15,7 +15,7 @@ struct SearchRecipeView: View {
     @State private var navigateToResults = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading){
                 Text("Search Recipes")
                     .font(.largeTitle)
@@ -63,9 +63,13 @@ struct SearchRecipeView: View {
                         .cornerRadius(10)
                 }
                 .padding(.bottom, 40)
-                .fullScreenCover(isPresented: $navigateToResults) {
-                   RecipeListView(recipeVM: recipeVM)
+//                .disabled(selectedIngredients.isEmpty)
+                .navigationDestination(isPresented: $navigateToResults) {
+                    RecipeListView(recipeVM: recipeVM)
                 }
+//                .fullScreenCover(isPresented: $navigateToResults) {
+//                   RecipeListView(recipeVM: recipeVM)
+//                }
             }
         }
         .padding(.horizontal)

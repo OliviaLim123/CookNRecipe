@@ -28,9 +28,9 @@ struct RecipeListView: View {
                     Spacer()
                 }
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 5)], spacing: 10) {
                         ForEach(recipeVM.recipes) { recipe in
-                            NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                            NavigationLink(destination: RecipeDetailFix( recipeId: recipe.id,recipeVM: recipeVM)) {
                                 RecipeCardView(recipe: recipe)
 //                                    .task {
 //                                        await recipeVM.fetchRecipeDetails(recipeId: recipe.id)

@@ -33,17 +33,49 @@ struct Recipe: Identifiable, Codable {
 //            analyzedInstructions = try? container.decodeIfPresent([InstructionWrapper].self, forKey: .analyzedInstructions)
 //        }
 }
-struct Ingredient: Identifiable, Codable {
+//struct Ingredient: Identifiable, Codable {
+//    let id: Int
+//    let name: String
+//    let amount: Double
+//    let unit: String? 
+//}
+//struct InstructionWrapper: Codable {
+//    let steps: [Instruction]
+//}
+//struct Instruction: Codable {
+//    let number: Int
+//    let step: String
+//}
+
+struct RecipeDetail: Codable {
+    let id: Int
+    let title: String
+    let image: String?
+    let readyInMinutes: Int?
+    let servings: Int?
+    let summary: String?
+    let extendedIngredients: [Ingredient]?
+    let analyzedInstructions: [InstructionWrapper]?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, title, image, readyInMinutes, servings, summary
+        case extendedIngredients, analyzedInstructions
+    }
+}
+
+struct Ingredient: Codable, Identifiable {
     let id: Int
     let name: String
     let amount: Double
-    let unit: String? 
+    let unit: String
 }
+
 struct InstructionWrapper: Codable {
-    let steps: [Instruction]?
+    let name: String?
+    let steps: [Step]
 }
-struct Instruction: Codable {
+
+struct Step: Codable {
     let number: Int
     let step: String
 }
-
