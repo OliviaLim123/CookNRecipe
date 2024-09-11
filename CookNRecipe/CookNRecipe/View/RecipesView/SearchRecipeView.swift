@@ -13,6 +13,7 @@ struct SearchRecipeView: View {
     @State private var selectedIngredients: [String] = []
     @State private var ingredientInput: String = ""
     @State private var navigateToResults = false
+    @State private var isLoading = false
     
     var body: some View {
         NavigationStack {
@@ -29,6 +30,7 @@ struct SearchRecipeView: View {
                 HStack {
                     TextField("Add an ingredient", text: $ingredientInput)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+    
                     Button {
                         if !ingredientInput.isEmpty {
                             selectedIngredients.append(ingredientInput)
@@ -47,6 +49,14 @@ struct SearchRecipeView: View {
                     .cornerRadius(10)
                 }
                 .padding()
+                HStack {
+                    Image(systemName: "trash")
+                        .padding(.leading, 20)
+                        .foregroundStyle(.pink)
+                    Text("Please swipe to delete the list.")
+                        .font(.subheadline)
+                    .foregroundStyle(.pink)
+                }
                 List {
                     ForEach(selectedIngredients, id: \.self) { ingredient in
                         Text(ingredient)
@@ -57,21 +67,34 @@ struct SearchRecipeView: View {
                 }
                 
                 Spacer()
-                Button {
-                    recipeVM.fetchRecipesByIngredient(ingredients: selectedIngredients)
-                    navigateToResults = true
-                } label: {
-                    Text("Search Recipes")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
+                if isLoading {
+                    LottieView(name: Constants.loadingAnimation, loopMode: .loop, animationSpeed: 1.5)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    Button {
+                        isLoading = true
+                        recipeVM.fetchRecipesByIngredient(ingredients: selectedIngredients) {
+                            isLoading = false
+                            navigateToResults = true
+                        }
+                    } label: {
+                        HStack(spacing: 2) {
+                            Text("Search Recipes")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.leading, 10)
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.white)
+                                .padding()
+                        }
                         .background(Color.pink)
                         .cornerRadius(10)
                         .padding(.horizontal)
-                }
-                .padding(.bottom, 40)
-                .navigationDestination(isPresented: $navigateToResults) {
-                    RecipeListView(recipeVM: recipeVM)
+                    }
+                    .padding(.bottom, 40)
+                    .navigationDestination(isPresented: $navigateToResults) {
+                        RecipeListView(recipeVM: recipeVM)
+                    }
                 }
             }
         }

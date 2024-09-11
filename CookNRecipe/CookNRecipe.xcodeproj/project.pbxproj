@@ -17,6 +17,7 @@
 		CB3756CC2C873CE1009BC05A /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3756CB2C873CE1009BC05A /* CreateRecipeView.swift */; };
 		CB3756CE2C873CF6009BC05A /* SavedRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3756CD2C873CF6009BC05A /* SavedRecipeView.swift */; };
 		CB3756D02C873D09009BC05A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3756CF2C873D09009BC05A /* TabBarView.swift */; };
+		CB437C482C9142D300D522C5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4232C8465BD0061415A /* ProfileView.swift */; };
 		CB80ADE92C8D39CF00EF082F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADE82C8D39CF00EF082F /* Recipe.swift */; };
 		CB80ADEB2C8D477700EF082F /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADEA2C8D477700EF082F /* RecipeViewModel.swift */; };
 		CB80ADF22C8D580E00EF082F /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADF12C8D580E00EF082F /* RecipeCardView.swift */; };
@@ -37,13 +38,13 @@
 		CBF0F41E2C8465260061415A /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F41D2C8465260061415A /* SettingRowView.swift */; };
 		CBF0F4202C84655C0061415A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F41F2C84655C0061415A /* LoginView.swift */; };
 		CBF0F4222C84658D0061415A /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4212C84658D0061415A /* RegistrationView.swift */; };
-		CBF0F4242C8465BD0061415A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4232C8465BD0061415A /* ProfileView.swift */; };
 		CBF0F4262C8467D10061415A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF0F4252C8467D10061415A /* GoogleService-Info.plist */; };
 		CBF0F4292C8468600061415A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CBF0F4282C8468600061415A /* FirebaseAuth */; };
 		CBF0F42B2C8468600061415A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CBF0F42A2C8468600061415A /* FirebaseFirestore */; };
 		CBF0F42D2C8468600061415A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CBF0F42C2C8468600061415A /* FirebaseStorage */; };
 		CBF0F42F2C8468AC0061415A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F42E2C8468AC0061415A /* AuthViewModel.swift */; };
 		CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4302C8477300061415A /* LaunchScreenView.swift */; };
+		CBF102162C91B5FC00FE086F /* Animation - 1726053938655.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF102152C91B5FC00FE086F /* Animation - 1726053938655.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		CBF0F4252C8467D10061415A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CBF0F42E2C8468AC0061415A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CBF0F4302C8477300061415A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		CBF102152C91B5FC00FE086F /* Animation - 1726053938655.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1726053938655.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3756BA2C871F97009BC05A /* Animation - 1725359454310.json */,
+				CBF102152C91B5FC00FE086F /* Animation - 1726053938655.json */,
 				CB3756B02C871BFA009BC05A /* LottieView.swift */,
 				CB3756B32C871C22009BC05A /* Constants.swift */,
 			);
@@ -297,6 +300,7 @@
 				CB3756BB2C871F97009BC05A /* Animation - 1725359454310.json in Resources */,
 				CBF0F4102C8462EC0061415A /* Preview Assets.xcassets in Resources */,
 				CBF0F40D2C8462EC0061415A /* Assets.xcassets in Resources */,
+				CBF102162C91B5FC00FE086F /* Animation - 1726053938655.json in Resources */,
 				CBF0F4262C8467D10061415A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBF0F4242C8465BD0061415A /* ProfileView.swift in Sources */,
 				CB3756C82C873CC4009BC05A /* RecipeListView.swift in Sources */,
 				CB80ADFF2C8D7E4400EF082F /* AddRecipeView.swift in Sources */,
 				CBF0F4202C84655C0061415A /* LoginView.swift in Sources */,
@@ -320,6 +323,7 @@
 				CB3756CA2C873CD4009BC05A /* SearchRecipeView.swift in Sources */,
 				CB80AE012C8DA16100EF082F /* OwnRecipe.swift in Sources */,
 				CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */,
+				CB437C482C9142D300D522C5 /* ProfileView.swift in Sources */,
 				CB3756CC2C873CE1009BC05A /* CreateRecipeView.swift in Sources */,
 				CB80AE052C8DB5A800EF082F /* MyRecipesDetailView.swift in Sources */,
 				CBB44AF72C87E303003582F1 /* SettingView.swift in Sources */,

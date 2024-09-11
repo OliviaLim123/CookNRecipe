@@ -22,11 +22,12 @@ class RecipeViewModel: ObservableObject {
 //        }
 //        performRequest(url: url)
 //    }
-    func fetchRecipesByIngredient(ingredients: [String]) {
+    func fetchRecipesByIngredient(ingredients: [String], completion: @escaping () -> Void) {
         let _ = ingredients.joined(separator: ",")
         let urlString = "\(recipeURL)/findByIngredients?ingredients=\(ingredients)&apiKey=\(apiKey)&number=20"
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
+            completion()
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -35,12 +36,19 @@ class RecipeViewModel: ObservableObject {
                     let decodedResponse = try JSONDecoder().decode([Recipe].self, from: data)
                     DispatchQueue.main.async {
                         self.recipes = decodedResponse
+                        completion()
                     }
                 } catch {
                     print("Error decoding data: \(error)")
+                    DispatchQueue.main.async {
+                        completion()
+                    }
                 }
             } else if let error = error {
                 print("HTTP Request Failed \(error)")
+                DispatchQueue.main.async {
+                    completion()
+                }
             }
         }.resume()
     }

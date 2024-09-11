@@ -10,10 +10,20 @@ import SwiftUI
 struct RecipeDetailView: View {
     var recipeId: Int
     @ObservedObject var recipeVM = RecipeViewModel() // Observing the ViewModel
+    @State private var isLoading = false
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                if let recipeDetail = recipeVM.selectedRecipe {
+                if isLoading {
+                    VStack {
+                        LottieView(name: Constants.loadingAnimation, loopMode: .loop, animationSpeed: 1.5)
+                            .frame(width: 200, height: 200)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.white.opacity(0.5)) 
+                    .edgesIgnoringSafeArea(.all)
+                    .padding(.top, 250)
+                } else if let recipeDetail = recipeVM.selectedRecipe {
                     Text(recipeDetail.title)
                         .font(.largeTitle)
                         .bold()
@@ -46,7 +56,7 @@ struct RecipeDetailView: View {
                             
                             if let ingredients = recipeDetail.extendedIngredients {
                                 ForEach(ingredients) { ingredient in
-                                    Text("\(ingredient.amount, specifier: "%.2f") \(ingredient.unit) \(ingredient.name)")
+                                    Text("\(ingredient.amount.clean) \(ingredient.unit) \(ingredient.name)")
                                         .padding(.vertical, 2)
                                 }
                             }
@@ -67,20 +77,21 @@ struct RecipeDetailView: View {
                                 Text("No instructions available.")
                             }
                 } else {
-                    VStack {
-                        ProgressView("Loading Recipe Details...")
-                            .padding()
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    Text("Recipe not found.")
+//                    VStack {
+//                        LottieView(name: Constants.loadingAnimation, loopMode: .loop, animationSpeed: 1.5)
+//                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    }
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
             .padding(.horizontal)
             .onAppear {
                 // Trigger fetching details when the view appears
                 Task {
-                    
+                    isLoading = true
                     await recipeVM.fetchRecipeDetails(recipeId:recipeId)
-                    
+                    isLoading = false
                 }
             }
         }
