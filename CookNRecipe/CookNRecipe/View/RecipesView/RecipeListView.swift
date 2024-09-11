@@ -32,9 +32,6 @@ struct RecipeListView: View {
                         ForEach(recipeVM.recipes) { recipe in
                             NavigationLink(destination: RecipeDetailView( recipeId: recipe.id,recipeVM: recipeVM)) {
                                 RecipeCardView(recipe: recipe)
-//                                    .task {
-//                                        await recipeVM.fetchRecipeDetails(recipeId: recipe.id)
-//                                    }
                             }
                         }
                     }

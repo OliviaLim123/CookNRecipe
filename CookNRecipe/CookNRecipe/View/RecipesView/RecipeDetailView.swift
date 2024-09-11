@@ -74,6 +74,7 @@ struct RecipeDetailView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
+            .padding(.horizontal)
             .onAppear {
                 // Trigger fetching details when the view appears
                 Task {
