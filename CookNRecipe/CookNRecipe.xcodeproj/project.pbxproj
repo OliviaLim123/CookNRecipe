@@ -124,6 +124,7 @@
 		CB80ADEE2C8D578E00EF082F /* RecipesView */ = {
 			isa = PBXGroup;
 			children = (
+				CB3756C92C873CD4009BC05A /* SearchRecipeView.swift */,
 				CB80ADF12C8D580E00EF082F /* RecipeCardView.swift */,
 				CB80ADFC2C8D732C00EF082F /* RecipeDetailView.swift */,
 				CB3756C72C873CC4009BC05A /* RecipeListView.swift */,
@@ -218,7 +219,6 @@
 				CB80AE0A2C8DC70200EF082F /* OwnRecipeView */,
 				CB80ADEE2C8D578E00EF082F /* RecipesView */,
 				CB3756BC2C872BB0009BC05A /* EntryAppView */,
-				CB3756C92C873CD4009BC05A /* SearchRecipeView.swift */,
 				CB3756CD2C873CF6009BC05A /* SavedRecipeView.swift */,
 				CB3756CF2C873D09009BC05A /* TabBarView.swift */,
 				CB3756B22C871C09009BC05A /* Lottie */,
