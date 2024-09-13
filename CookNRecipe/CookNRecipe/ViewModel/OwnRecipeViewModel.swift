@@ -73,4 +73,21 @@ class OwnRecipeViewModel: ObservableObject {
             }
         }
     }
+    
+    func deleteRecipe(recipe: CustomOwnRecipe) {
+            let request: NSFetchRequest<OwnedRecipe> = OwnedRecipe.fetchRequest()
+            request.predicate = NSPredicate(format: "name == %@", recipe.name)
+            
+            do {
+                let result = try viewContext.fetch(request)
+                if let objectToDelete = result.first {
+                    viewContext.delete(objectToDelete)
+                    saveContext()
+                    fetchRecipes()  // Refresh the recipes list after deletion
+                }
+            } catch {
+                print("Failed to delete recipe: \(error)")
+            }
+        }
+
 }
