@@ -16,7 +16,7 @@ protocol AuthenticationFormProtocol {
 
 @MainActor // publishing back to the main
 class AuthViewModel: ObservableObject {
-    @Published var userSession: FirebaseAuth.User? {//firebase user
+    @Published var userSession: FirebaseAuth.User? { //firebase user
         didSet {
             self.isLoggedIn = userSession != nil // Automatically update isLoggedIn when userSession changes
         }
@@ -44,7 +44,7 @@ class AuthViewModel: ObservableObject {
             self.userSession = result.user
             self.isLoggedIn = true
             self.loginErrorMessage = nil
-            await fetchUser()//without this, the profile view will be blank
+            await fetchUser() // without this, the profile view will be blank
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
             self.loginErrorMessage = "Sorry, your account is invalid. Please Sign Up to continue!"
@@ -70,9 +70,9 @@ class AuthViewModel: ObservableObject {
     
     func signOut() {
         do {
-            try Auth.auth().signOut()//sign out user on back end
-            self.userSession = nil //wipes out user session and takes us back to login screen
-            self.currentUser = nil //wipes current user data model
+            try Auth.auth().signOut() // sign out user on back end
+            self.userSession = nil // wipes out user session and takes us back to login screen
+            self.currentUser = nil // wipes current user data model
             self.isLoggedIn = false
         } catch {
             print("DEBUG: Failed to sign out error \(error.localizedDescription)")
