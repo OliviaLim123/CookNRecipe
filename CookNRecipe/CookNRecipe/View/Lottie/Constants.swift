@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Static consants for Lottie Animation which used across the application
 enum Constants {
     static var cookAnimation = "Animation - 1725359454310"
     static var loadingAnimation = "Animation - 1726053938655"

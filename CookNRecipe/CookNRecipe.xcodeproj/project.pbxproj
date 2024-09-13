@@ -108,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB02A39B2C9500C5005DD75D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CBF102172C91BB2200FE086F /* DataCookNRecipe.xcdatamodeld */,
+				CB8EF7062C944B19007EF654 /* Persistence.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		CB3756B22C871C09009BC05A /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,11 +198,10 @@
 				CBF0F4182C8463EB0061415A /* View */,
 				CBF0F4172C8463DE0061415A /* ViewModel */,
 				CBF0F4162C8463D90061415A /* Model */,
+				CB02A39B2C9500C5005DD75D /* Database */,
 				CBF0F40C2C8462EC0061415A /* Assets.xcassets */,
 				CBF0F4252C8467D10061415A /* GoogleService-Info.plist */,
 				CBF0F40E2C8462EC0061415A /* Preview Content */,
-				CBF102172C91BB2200FE086F /* DataCookNRecipe.xcdatamodeld */,
-				CB8EF7062C944B19007EF654 /* Persistence.swift */,
 			);
 			path = CookNRecipe;
 			sourceTree = "<group>";
