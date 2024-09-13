@@ -28,6 +28,7 @@
 		CB80AE052C8DB5A800EF082F /* MyRecipesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE042C8DB5A800EF082F /* MyRecipesDetailView.swift */; };
 		CB80AE072C8DB60100EF082F /* OwnRecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE062C8DB60100EF082F /* OwnRecipeCardView.swift */; };
 		CB80AE092C8DBA7100EF082F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE082C8DBA7100EF082F /* ImagePicker.swift */; };
+		CB8EF7072C944B19007EF654 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EF7062C944B19007EF654 /* Persistance.swift */; };
 		CBB44AF72C87E303003582F1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB44AF62C87E303003582F1 /* SettingView.swift */; };
 		CBF0F4092C8462EB0061415A /* CookNRecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4082C8462EB0061415A /* CookNRecipeApp.swift */; };
 		CBF0F40B2C8462EB0061415A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F40A2C8462EB0061415A /* ContentView.swift */; };
@@ -45,6 +46,7 @@
 		CBF0F42F2C8468AC0061415A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F42E2C8468AC0061415A /* AuthViewModel.swift */; };
 		CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0F4302C8477300061415A /* LaunchScreenView.swift */; };
 		CBF102162C91B5FC00FE086F /* Animation - 1726053938655.json in Resources */ = {isa = PBXBuildFile; fileRef = CBF102152C91B5FC00FE086F /* Animation - 1726053938655.json */; };
+		CBF102192C91BB2200FE086F /* DataCookNRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBF102172C91BB2200FE086F /* DataCookNRecipe.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,7 @@
 		CB80AE042C8DB5A800EF082F /* MyRecipesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipesDetailView.swift; sourceTree = "<group>"; };
 		CB80AE062C8DB60100EF082F /* OwnRecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnRecipeCardView.swift; sourceTree = "<group>"; };
 		CB80AE082C8DBA7100EF082F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CB8EF7062C944B19007EF654 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		CBB44AF62C87E303003582F1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		CBF0F4052C8462EB0061415A /* CookNRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookNRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF0F4082C8462EB0061415A /* CookNRecipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookNRecipeApp.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		CBF0F42E2C8468AC0061415A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CBF0F4302C8477300061415A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		CBF102152C91B5FC00FE086F /* Animation - 1726053938655.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1726053938655.json"; sourceTree = "<group>"; };
+		CBF102182C91BB2200FE086F /* SavedRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedRecipe.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 				CBF0F40C2C8462EC0061415A /* Assets.xcassets */,
 				CBF0F4252C8467D10061415A /* GoogleService-Info.plist */,
 				CBF0F40E2C8462EC0061415A /* Preview Content */,
+				CBF102172C91BB2200FE086F /* DataCookNRecipe.xcdatamodeld */,
+				CB8EF7062C944B19007EF654 /* Persistance.swift */,
 			);
 			path = CookNRecipe;
 			sourceTree = "<group>";
@@ -323,12 +329,14 @@
 				CB3756CA2C873CD4009BC05A /* SearchRecipeView.swift in Sources */,
 				CB80AE012C8DA16100EF082F /* OwnRecipe.swift in Sources */,
 				CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */,
+				CB8EF7072C944B19007EF654 /* Persistance.swift in Sources */,
 				CB437C482C9142D300D522C5 /* ProfileView.swift in Sources */,
 				CB3756CC2C873CE1009BC05A /* CreateRecipeView.swift in Sources */,
 				CB80AE052C8DB5A800EF082F /* MyRecipesDetailView.swift in Sources */,
 				CBB44AF72C87E303003582F1 /* SettingView.swift in Sources */,
 				CB3756D02C873D09009BC05A /* TabBarView.swift in Sources */,
 				CB80AE032C8DB1AF00EF082F /* OwnRecipeViewModel.swift in Sources */,
+				CBF102192C91BB2200FE086F /* DataCookNRecipe.xcdatamodeld in Sources */,
 				CB80AE092C8DBA7100EF082F /* ImagePicker.swift in Sources */,
 				CBF0F4092C8462EB0061415A /* CookNRecipeApp.swift in Sources */,
 				CB3756B92C871DF1009BC05A /* WelcomeView.swift in Sources */,
@@ -586,6 +594,19 @@
 			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CBF102172C91BB2200FE086F /* DataCookNRecipe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CBF102182C91BB2200FE086F /* SavedRecipe.xcdatamodel */,
+			);
+			currentVersion = CBF102182C91BB2200FE086F /* SavedRecipe.xcdatamodel */;
+			path = DataCookNRecipe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CBF0F3FD2C8462EB0061415A /* Project object */;
 }

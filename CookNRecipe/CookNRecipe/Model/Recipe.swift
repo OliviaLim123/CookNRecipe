@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct Recipe: Identifiable, Codable {
+protocol RecipeRepresentable {
+    var id: Int { get }
+    var title: String { get }
+    var image: String? { get }
+}
+
+struct Recipe: Identifiable, Codable, RecipeRepresentable {
     let id: Int
     let title: String
     let image: String?
@@ -39,4 +45,16 @@ struct InstructionWrapper: Codable {
 struct Step: Codable {
     let number: Int
     let step: String
+}
+
+struct SavedRecipeModel: RecipeRepresentable {
+    let id: Int
+    let title: String
+    let image: String?
+    
+    init(recipe: SavedRecipe) {
+        self.id = Int(recipe.id)
+        self.title = recipe.title ?? "Unknown Title"
+        self.image = recipe.image
+    }
 }

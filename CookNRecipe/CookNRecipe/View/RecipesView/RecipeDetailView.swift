@@ -11,6 +11,8 @@ struct RecipeDetailView: View {
     var recipeId: Int
     @ObservedObject var recipeVM = RecipeViewModel() // Observing the ViewModel
     @State private var isLoading = false
+    @State private var isBookmarked = false
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -24,10 +26,28 @@ struct RecipeDetailView: View {
                     .edgesIgnoringSafeArea(.all)
                     .padding(.top, 250)
                 } else if let recipeDetail = recipeVM.selectedRecipe {
-                    Text(recipeDetail.title)
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundStyle(.pink)
+                    HStack {
+                        Text(recipeDetail.title)
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundStyle(.pink)
+                        Spacer()
+                        Button(action: {
+                            if isBookmarked {
+                                PersistenceController.shared.removeRecipe(recipeId: recipeDetail.id)
+                            } else {
+                                PersistenceController.shared.saveRecipe(recipe: recipeDetail)
+                            }
+                            isBookmarked.toggle()
+                        }) {
+                            Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                                .foregroundColor(.pink)
+                                .font(.system(size: 24))
+                        }
+                        .onAppear {
+                            isBookmarked = PersistenceController.shared.isRecipeSaved(recipeId: recipeDetail.id)
+                        }
+                    }
                     
                     if let imageUrl = recipeDetail.image {
                         AsyncImage(url: URL(string: imageUrl)) { image in
