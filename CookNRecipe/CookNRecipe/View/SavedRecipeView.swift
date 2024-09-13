@@ -59,33 +59,83 @@ import CoreData
 //    }
 //}
 
-import SwiftUI
+//import SwiftUI
+//
+//
+//struct SavedRecipeView: View {
+//    @State private var savedRecipes: [SavedRecipe] = []
+//
+//    var body: some View {
+//        NavigationView {
+//            List(savedRecipes, id: \.id) { recipe in
+//                VStack(alignment: .leading) {
+//                    Text(recipe.title ?? "Unknown Title")
+//                        .font(.headline)
+//                    if let ingredients = recipe.ingredients {
+//                        Text(ingredients)
+//                            .font(.subheadline)
+//                            .lineLimit(2)
+//                    }
+//                }
+//            }
+//            .navigationTitle("My Saved Recipes")
+//            .onAppear {
+//                savedRecipes = PersistenceController.shared.fetchSavedRecipes()
+//            }
+//        }
+//    }
+//}
+//
+//#Preview {
+//    SavedRecipeView()
+//}
 
+import SwiftUI
 
 struct SavedRecipeView: View {
     @State private var savedRecipes: [SavedRecipe] = []
 
     var body: some View {
         NavigationView {
-            List(savedRecipes, id: \.id) { recipe in
-                VStack(alignment: .leading) {
-                    Text(recipe.title ?? "Unknown Title")
+            VStack(alignment: .leading) {
+                Text("My Saved Recipes")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.pink)
+                    .multilineTextAlignment(.leading)
+                
+                HStack {
+                    Text("\(savedRecipes.count) \(savedRecipes.count > 1 ? "recipes" : "recipe")")
                         .font(.headline)
-                    if let ingredients = recipe.ingredients {
-                        Text(ingredients)
-                            .font(.subheadline)
-                            .lineLimit(2)
+                        .fontWeight(.medium)
+                        .opacity(0.7)
+                    
+                    Spacer()
+                }
+                
+                if savedRecipes.isEmpty {
+                    Text("No saved recipes")
+                        .foregroundColor(.gray)
+                        .padding()
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 10)], spacing: 10) {
+                            ForEach(savedRecipes, id: \.id) { recipe in
+                                // Use NavigationLink to RecipeDetailView
+                                NavigationLink(destination: RecipeDetailView(recipeId: Int(recipe.id))) {
+                                    // Utilize the RecipeCardView to display saved recipes
+                                    RecipeCardView(recipe: SavedRecipeModel(recipe: recipe))
+                                }
+                            }
+                        }
+                        .padding(.top)
                     }
                 }
             }
-            .navigationTitle("My Saved Recipes")
+            .padding(.horizontal)
             .onAppear {
                 savedRecipes = PersistenceController.shared.fetchSavedRecipes()
             }
         }
     }
-}
-
-#Preview {
-    SavedRecipeView()
 }

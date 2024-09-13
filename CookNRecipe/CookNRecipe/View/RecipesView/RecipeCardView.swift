@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct RecipeCardView: View {
+struct RecipeCardView<T: RecipeRepresentable>: View {
+    var recipe: T
+//struct RecipeCardView: View {
 //    @ObservedObject private var recipeVM: RecipeViewModel
-    var recipe: Recipe
+//    var recipe: Recipe
     
     var body: some View {
         VStack {
