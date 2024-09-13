@@ -30,7 +30,7 @@ struct PersistenceController {
         return container.viewContext
     }
 
-    // FUCTION: Save a recipe id, title, and image to Core Data
+    // METHOD: Save a recipe id, title, and image to Core Data
     func saveRecipe(recipe: Recipe) {
         let savedRecipe = SavedRecipe(context: context)
         savedRecipe.id = Int64(recipe.id)
@@ -57,7 +57,7 @@ struct PersistenceController {
         }
     }
 
-    // FUCTION: Check if a recipe with the id is already saved in Core Data
+    // METHOD: Check if a recipe with the id is already saved in Core Data
     func isRecipeSaved(recipeId: Int) -> Bool {
         let fetchRequest: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
         // Filter the recipe by id
@@ -75,7 +75,7 @@ struct PersistenceController {
         }
     }
 
-    // FUNCTION: Remove a saved recipe with id from Core Data
+    // METHOD: Remove a saved recipe with id from Core Data
     func removeRecipe(recipeId: Int) {
         let fetchRequest: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
         // Filter the recipe by id
@@ -94,7 +94,7 @@ struct PersistenceController {
         }
     }
 
-    // FUNCTION: Fetches all saved recipes from Core Data
+    // METHOD: Fetches all saved recipes from Core Data
     func fetchSavedRecipes() -> [SavedRecipe] {
         let fetchRequest: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
         
