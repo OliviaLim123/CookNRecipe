@@ -20,8 +20,17 @@ struct CreateRecipeView: View {
                     .foregroundStyle(.pink)
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal, 20)
+                HStack {
+                    Text("\(ownRecipeVM.myRecipes.count) \(ownRecipeVM.myRecipes.count > 1 ? "recipes" : "recipe")")
+                        .font(.headline)
+                        .fontWeight(.medium)
+                        .opacity(0.7)
+                        .padding(.horizontal, 20)
+                    
+                    Spacer()
+                }
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 10)], spacing: 10) {
                         ForEach(ownRecipeVM.myRecipes) { recipe in
                             NavigationLink(destination: MyRecipesDetailView(recipe: recipe)) {
                                 OwnRecipeCardView(recipe: recipe)
@@ -29,6 +38,7 @@ struct CreateRecipeView: View {
                         }
                     }
                     .padding(.top)
+                    .padding(.horizontal, 20)
                 }
                 Spacer()
                 Button {
@@ -53,6 +63,9 @@ struct CreateRecipeView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .onAppear {
+                ownRecipeVM.fetchRecipes() // Ensure recipes are fetched when view appears
+            }
         }
     }
 }

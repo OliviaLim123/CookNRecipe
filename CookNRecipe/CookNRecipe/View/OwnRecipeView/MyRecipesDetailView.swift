@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyRecipesDetailView: View {
     @EnvironmentObject var ownRecipeVM: OwnRecipeViewModel
-    var recipe: OwnRecipe
+    var recipe: CustomOwnRecipe
     var body: some View {
         ScrollView {
             VStack(alignment: .leading){
@@ -62,7 +62,7 @@ struct MyRecipesDetailView: View {
 }
 
 #Preview {
-    MyRecipesDetailView(recipe: OwnRecipe(
+    MyRecipesDetailView(recipe: CustomOwnRecipe(
         name: "Mock Recipe",
         image: nil,
         description: "example",

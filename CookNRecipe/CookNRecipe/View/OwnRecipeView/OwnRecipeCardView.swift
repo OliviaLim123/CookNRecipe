@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OwnRecipeCardView: View {
 //    @ObservedObject private var recipeVM: RecipeViewModel
-    var recipe: OwnRecipe
+    var recipe: CustomOwnRecipe
     
     var body: some View {
         VStack {
@@ -25,7 +25,7 @@ struct OwnRecipeCardView: View {
                             .foregroundStyle(.white)
                             .shadow(color: .black, radius: 3, x:0, y:0)
                             .frame(maxWidth: 136)
-                            .padding()
+//                            .padding()
                         
                     }
             } else {
@@ -42,7 +42,7 @@ struct OwnRecipeCardView: View {
                             .foregroundStyle(.white)
                             .shadow(color: .black, radius: 3, x:0, y:0)
                             .frame(maxWidth: 136)
-                            .padding()
+//                            .padding()
                     }
             }
         }
@@ -54,7 +54,7 @@ struct OwnRecipeCardView: View {
 }
 
 #Preview {
-  OwnRecipeCardView(recipe: OwnRecipe(
+  OwnRecipeCardView(recipe: CustomOwnRecipe(
     name: "Mock Recipe",
     image: nil,
     description: "example",

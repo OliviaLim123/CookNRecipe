@@ -23,7 +23,7 @@
 		CB80ADF22C8D580E00EF082F /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADF12C8D580E00EF082F /* RecipeCardView.swift */; };
 		CB80ADFD2C8D732C00EF082F /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADFC2C8D732C00EF082F /* RecipeDetailView.swift */; };
 		CB80ADFF2C8D7E4400EF082F /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */; };
-		CB80AE012C8DA16100EF082F /* OwnRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE002C8DA16100EF082F /* OwnRecipe.swift */; };
+		CB80AE012C8DA16100EF082F /* CustomOwnRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE002C8DA16100EF082F /* CustomOwnRecipe.swift */; };
 		CB80AE032C8DB1AF00EF082F /* OwnRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE022C8DB1AF00EF082F /* OwnRecipeViewModel.swift */; };
 		CB80AE052C8DB5A800EF082F /* MyRecipesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE042C8DB5A800EF082F /* MyRecipesDetailView.swift */; };
 		CB80AE072C8DB60100EF082F /* OwnRecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80AE062C8DB60100EF082F /* OwnRecipeCardView.swift */; };
@@ -65,7 +65,7 @@
 		CB80ADF12C8D580E00EF082F /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		CB80ADFC2C8D732C00EF082F /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		CB80ADFE2C8D7E4400EF082F /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
-		CB80AE002C8DA16100EF082F /* OwnRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnRecipe.swift; sourceTree = "<group>"; };
+		CB80AE002C8DA16100EF082F /* CustomOwnRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOwnRecipe.swift; sourceTree = "<group>"; };
 		CB80AE022C8DB1AF00EF082F /* OwnRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnRecipeViewModel.swift; sourceTree = "<group>"; };
 		CB80AE042C8DB5A800EF082F /* MyRecipesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipesDetailView.swift; sourceTree = "<group>"; };
 		CB80AE062C8DB60100EF082F /* OwnRecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnRecipeCardView.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 			children = (
 				CBF0F4192C84641B0061415A /* User.swift */,
 				CB80ADE82C8D39CF00EF082F /* Recipe.swift */,
-				CB80AE002C8DA16100EF082F /* OwnRecipe.swift */,
+				CB80AE002C8DA16100EF082F /* CustomOwnRecipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 				CBF0F4222C84658D0061415A /* RegistrationView.swift in Sources */,
 				CB3756CE2C873CF6009BC05A /* SavedRecipeView.swift in Sources */,
 				CB3756CA2C873CD4009BC05A /* SearchRecipeView.swift in Sources */,
-				CB80AE012C8DA16100EF082F /* OwnRecipe.swift in Sources */,
+				CB80AE012C8DA16100EF082F /* CustomOwnRecipe.swift in Sources */,
 				CBF0F4312C8477300061415A /* LaunchScreenView.swift in Sources */,
 				CB8EF7072C944B19007EF654 /* SavedPersistance.swift in Sources */,
 				CB437C482C9142D300D522C5 /* ProfileView.swift in Sources */,

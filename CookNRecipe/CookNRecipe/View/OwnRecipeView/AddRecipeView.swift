@@ -141,22 +141,48 @@ struct AddRecipeView: View {
         .environmentObject(OwnRecipeViewModel())
 }
 
+//extension AddRecipeView {
+//    private func saveRecipe() {
+//        //Get the current date
+//        let now = Date()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-mm-dd"
+//        let datePublished = dateFormatter.string(from: now)
+//        print(datePublished)
+//        let imageData = image?.jpegData(compressionQuality: 0.8) ?? Data()
+//        let recipe = OwnRecipe(
+//            name: name, image: imageData,
+//            description: description,
+//            ingredients: ingredients,
+//            instructions: instructions,
+//            category: selectedCategory.rawValue,
+//            datePublished: datePublished)
+//            ownRecipeVM.addRecipe(recipe: recipe)
+//    }
+//}
 extension AddRecipeView {
     private func saveRecipe() {
-        //Get the current date
+        // Get the current date
         let now = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd" // Corrected the date format
         let datePublished = dateFormatter.string(from: now)
-        print(datePublished)
+        
+        // Prepare image data
         let imageData = image?.jpegData(compressionQuality: 0.8) ?? Data()
-        let recipe = OwnRecipe(
-            name: name, image: imageData,
+        
+        // Create a new recipe
+        let recipe = CustomOwnRecipe(
+            name: name,
+            image: imageData,
             description: description,
             ingredients: ingredients,
             instructions: instructions,
             category: selectedCategory.rawValue,
-            datePublished: datePublished)
-            ownRecipeVM.addRecipe(recipe: recipe)
+            datePublished: datePublished
+        )
+        
+        // Save recipe using the view model
+        ownRecipeVM.addRecipe(recipe: recipe)
     }
 }
