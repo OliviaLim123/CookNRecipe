@@ -113,6 +113,27 @@ struct AddRecipeView: View {
         }
         .navigationViewStyle(.stack)
     }
+//    private func saveRecipe() {
+//           let now = Date()
+//           let dateFormatter = DateFormatter()
+//           dateFormatter.dateFormat = "yyyy-MM-dd"
+//           let datePublished = dateFormatter.string(from: now)
+//           
+//           let imageData = image?.jpegData(compressionQuality: 0.8) ?? Data()
+//
+//           let recipe = OwnRecipe(
+//               name: name,
+//               image: imageData,
+//               description: description,
+//               ingredients: ingredients,
+//               instructions: instructions,
+//               category: selectedCategory.rawValue,
+//               datePublished: datePublished
+//           )
+//           
+//           // Add recipe to the view model
+//           ownRecipeVM.addRecipe(recipe: recipe)
+//       }
 }
 
 #Preview {
@@ -136,6 +157,6 @@ extension AddRecipeView {
             instructions: instructions,
             category: selectedCategory.rawValue,
             datePublished: datePublished)
-        ownRecipeVM.addRecipe(recipe: recipe)
+            ownRecipeVM.addRecipe(recipe: recipe)
     }
 }

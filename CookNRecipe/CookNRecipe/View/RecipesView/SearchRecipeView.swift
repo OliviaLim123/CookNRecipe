@@ -68,7 +68,7 @@ struct SearchRecipeView: View {
                 
                 Spacer()
                 if isLoading {
-                    LottieView(name: Constants.loadingAnimation, loopMode: .loop, animationSpeed: 1.5)
+                    LottieView(name: Constants.lineLoadingAnimation, loopMode: .loop, animationSpeed: 1.0)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
                     Button {

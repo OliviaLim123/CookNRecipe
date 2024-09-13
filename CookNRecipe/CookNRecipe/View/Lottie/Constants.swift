@@ -10,4 +10,5 @@ import Foundation
 enum Constants {
     static var cookAnimation = "Animation - 1725359454310"
     static var loadingAnimation = "Animation - 1726053938655"
+    static var lineLoadingAnimation = "Animation - 1726226585731"
 }
