@@ -60,6 +60,6 @@ struct OwnRecipeCardView: View {
     description: "example",
     ingredients: "Testing",
     instructions: "hello",
-    category: Category.main.rawValue,
+//    category: Category.main.rawValue,
     datePublished: ""))
 }

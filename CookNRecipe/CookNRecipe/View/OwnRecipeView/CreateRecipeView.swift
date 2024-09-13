@@ -22,6 +22,7 @@ struct CreateRecipeView: View {
                     .foregroundStyle(.pink)
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal, 20)
+                
                 HStack {
                     Text("\(ownRecipeVM.myRecipes.count) \(ownRecipeVM.myRecipes.count > 1 ? "recipes" : "recipe")")
                         .font(.headline)
@@ -32,14 +33,14 @@ struct CreateRecipeView: View {
                     
                     Spacer()
                 }
-                HStack {
-                    Image(systemName: "trash")
-                        .padding(.leading, 20)
-                        .foregroundStyle(.pink)
-                    Text("Please press and hold to remove the recipe")
-                        .font(.subheadline)
-                        .foregroundStyle(.pink)
-                }
+//                HStack {
+//                    Image(systemName: "trash")
+//                        .padding(.leading, 20)
+//                        .foregroundStyle(.pink)
+//                    Text("Please press and hold to remove the recipe")
+//                        .font(.subheadline)
+//                        .foregroundStyle(.pink)
+//                }
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 10)], spacing: 10) {
                         ForEach(ownRecipeVM.myRecipes) { recipe in
@@ -108,13 +109,23 @@ struct CreateRecipeView: View {
                 }
                 .background(Color(.systemPink))
                 .cornerRadius(10)
-                .padding(.top, 24)
+//                .padding(.top, 24)
                 .padding(.horizontal, 20)
                 .navigationViewStyle(.stack)
                 .fullScreenCover(isPresented: $showAddRecipe){
                     AddRecipeView()
                         .environmentObject(ownRecipeVM)
                 }
+                HStack(alignment: .center) {
+                    Image(systemName: "trash")
+                        .padding(.leading, 20)
+                        .foregroundStyle(.pink)
+                    Text("Please press and hold to remove the recipe")
+                        .font(.subheadline)
+                        .foregroundStyle(.pink)
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.bottom, 40)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .onAppear {

@@ -34,7 +34,7 @@ class OwnRecipeViewModel: ObservableObject {
         let newRecipe = OwnedRecipe(context: viewContext)
         newRecipe.name = recipe.name
         newRecipe.image = recipe.image
-        newRecipe.category = recipe.category
+//        newRecipe.category = recipe.category
         newRecipe.recipeDescription = recipe.description
         newRecipe.ingredients = recipe.ingredients
         newRecipe.instructions = recipe.instructions
@@ -55,7 +55,7 @@ class OwnRecipeViewModel: ObservableObject {
                           description: entity.recipeDescription ?? "",
                           ingredients: entity.ingredients ?? "",
                           instructions: entity.instructions ?? "",
-                          category: entity.category ?? "",
+//                          category: entity.category ?? "",
                           datePublished: entity.datePublished ?? "")
             }
         } catch {

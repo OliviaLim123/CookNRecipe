@@ -11,7 +11,7 @@ import PhotosUI
 struct AddRecipeView: View {
     @State private var name: String = ""
     @State private var image: UIImage? = nil
-    @State private var selectedCategory: Category = Category.main
+//    @State private var selectedCategory: Category = Category.main
     @State private var description: String = ""
     @State private var ingredients: String = ""
     @State private var instructions: String = ""
@@ -33,15 +33,15 @@ struct AddRecipeView: View {
                     Section(header: Text("Name")){
                         TextField("Recipe Name", text: $name)
                     }
-                    Section(header: Text("Category")){
-                        Picker("Category", selection: $selectedCategory){
-                            ForEach(Category.allCases) { category in
-                                Text(category.rawValue)
-                                    .tag(category)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                    }
+//                    Section(header: Text("Category")){
+//                        Picker("Category", selection: $selectedCategory){
+//                            ForEach(Category.allCases) { category in
+//                                Text(category.rawValue)
+//                                    .tag(category)
+//                            }
+//                        }
+//                        .pickerStyle(.menu)
+//                    }
                     Section(header: Text("Image")) {
                         if let image = image {
                             Image(uiImage: image)
@@ -178,7 +178,7 @@ extension AddRecipeView {
             description: description,
             ingredients: ingredients,
             instructions: instructions,
-            category: selectedCategory.rawValue,
+//            category: selectedCategory.rawValue,
             datePublished: datePublished
         )
         

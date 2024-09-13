@@ -7,18 +7,18 @@
 
 import Foundation
 
-enum Category: String, CaseIterable, Identifiable {
-    var id: String { self.rawValue }
-    case breakfast = "Breakfast"
-    case soup = "Soup"
-    case salad = "Salad"
-    case appetizer = "Appetizer"
-    case main = "Main"
-    case side = "Side"
-    case dessert = "Dessert"
-    case snack = "Snack"
-    case drink = "Drink"
-}
+//enum Category: String, CaseIterable, Identifiable {
+//    var id: String { self.rawValue }
+//    case breakfast = "Breakfast"
+//    case soup = "Soup"
+//    case salad = "Salad"
+//    case appetizer = "Appetizer"
+//    case main = "Main"
+//    case side = "Side"
+//    case dessert = "Dessert"
+//    case snack = "Snack"
+//    case drink = "Drink"
+//}
 
 struct CustomOwnRecipe: Identifiable, Hashable {
     let id = UUID()
@@ -27,6 +27,6 @@ struct CustomOwnRecipe: Identifiable, Hashable {
     let description: String
     let ingredients: String
     let instructions: String
-    let category: Category.RawValue
+//    let category: Category.RawValue
     let datePublished: String 
 }
