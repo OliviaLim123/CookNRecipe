@@ -7,12 +7,15 @@
 
 import Foundation
 
+// MARK: A user model for email authentication function with Firebase
 struct User: Identifiable, Codable {
+    
+    // MARK: Properties of user model
     let id: String
     let fullName: String
     let email: String
     
-    //Divide the FullName and will display it in the profile circle shape
+    // Divide the FullName and will display it in the profile circle shape
     var initials: String {
         let formatter = PersonNameComponentsFormatter()
         if let components = formatter.personNameComponents(from: fullName){
@@ -23,7 +26,7 @@ struct User: Identifiable, Codable {
     }
 }
 
-//Create the mock user
+// MARK: The mock user
 extension User {
     static var MOCK_USER = User(id: NSUUID().uuidString, fullName: "Olivia Lim", email: "test@gmail.com")
 }
