@@ -98,11 +98,6 @@ struct RecipeDetailView: View {
                             }
                 } else {
                     Text("Recipe not found.")
-//                    VStack {
-//                        LottieView(name: Constants.loadingAnimation, loopMode: .loop, animationSpeed: 1.5)
-//                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    }
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
             .padding(.horizontal)

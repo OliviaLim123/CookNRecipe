@@ -9,9 +9,6 @@ import SwiftUI
 
 struct RecipeCardView<T: RecipeRepresentable>: View {
     var recipe: T
-//struct RecipeCardView: View {
-//    @ObservedObject private var recipeVM: RecipeViewModel
-//    var recipe: Recipe
     
     var body: some View {
         VStack {
@@ -54,22 +51,33 @@ struct RecipeCardView<T: RecipeRepresentable>: View {
     }
 }
 
-//#Preview {
-//    RecipeCardView(recipe: Recipe(
-//        id: 1,
-//        title: "Example",
-//        image: "",
-//        readyInMinutes: 20,
-//        servings: 2,
-//        summary: "just a mock example",
-//        extendedIngredients: [
-//            Ingredient(id: 1, name: "Carrot", amount: 3.0, unit: "pcs"),
-//            Ingredient(id: 2, name: "Garlic", amount: 2.0, unit: "cloves")
-//        ], 
-//        analyzedInstructions: [
-//            InstructionWrapper(steps: [
-//                Instruction(number: 1, step: "Chop the carrots."),
-//                Instruction(number: 2, step: "Boil them for 10 minutes.")
-//            ])
-//        ]))
-//}
+#Preview {
+    RecipeCardView(recipe: Recipe(id: 1,
+                                  title: "Spaghetti Carbonara",
+                                  image: "",
+                                  readyInMinutes: 30,
+                                  servings: 4,
+                                  summary: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper",
+                                  extendedIngredients: [
+                                    Ingredient(id: 1, name: "Spaghetti", amount: 200, unit: "g"),
+                                    Ingredient(id: 2, name: "Pancetta", amount: 100, unit: "g"),
+                                    Ingredient(id: 3, name: "Eggs", amount: 2, unit: "pcs"),
+                                    Ingredient(id: 4, name: "Parmesan Cheese", amount: 50, unit: "g"),
+                                    Ingredient(id: 5, name: "Black Pepper", amount: 1, unit: "tsp"),
+                                    Ingredient(id: 6, name: "Salt", amount: 0.5, unit: "tsp")
+                                  ],
+                                  analyzedInstructions: [
+                                    InstructionWrapper(
+                                        name: "Main Instructions",
+                                        steps: [
+                                            Step(number: 1, step: "Cook the spaghetti in salted boiling water."),
+                                            Step(number: 2, step: "Fry the pancetta in a pan until crispy."),
+                                            Step(number: 3, step: "Mix eggs and Parmesan in a bowl."),
+                                            Step(number: 4, step: "Toss the cooked pasta with pancetta and egg mixture."),
+                                            Step(number: 5, step: "Season with black pepper and serve.")
+                                        ]
+                                    )
+                                ]
+                                )
+                   )
+}
