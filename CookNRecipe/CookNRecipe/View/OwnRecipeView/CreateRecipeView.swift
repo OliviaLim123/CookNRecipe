@@ -33,45 +33,9 @@ struct CreateRecipeView: View {
                     
                     Spacer()
                 }
-//                HStack {
-//                    Image(systemName: "trash")
-//                        .padding(.leading, 20)
-//                        .foregroundStyle(.pink)
-//                    Text("Please press and hold to remove the recipe")
-//                        .font(.subheadline)
-//                        .foregroundStyle(.pink)
-//                }
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 10)], spacing: 10) {
                         ForEach(ownRecipeVM.myRecipes) { recipe in
-                            
-//                            ZStack {
-//                                OwnRecipeCardView(recipe: recipe)
-//                                    .frame(width: 160)
-//                                    .simultaneousGesture(
-//                                        TapGesture()
-//                                            .onEnded {
-//                                                // Navigate to MyRecipesDetailView on tap
-//                                                selectedRecipe = recipe
-//                                            }
-//                                    )
-//                                    .onLongPressGesture {
-//                                        // Trigger the delete confirmation alert on long press
-//                                        selectedRecipe = recipe
-//                                        showDeleteConfirmation = true
-//                                    }
-//                              
-                                
-                                // NavigationLink outside the gesture area to prevent conflicts
-//                                NavigationLink(
-//                                    destination: MyRecipesDetailView(recipe: selectedRecipe ?? recipe),
-//                                    isActive: Binding(
-//                                        get: { selectedRecipe != nil && selectedRecipe == recipe },
-//                                        set: { if !$0 { selectedRecipe = nil } }
-//                                    ),
-//                                    label: { EmptyView() }
-//                                )
-                           // }
                             NavigationLink(destination: MyRecipesDetailView(recipe: recipe)) {
                                 OwnRecipeCardView(recipe: recipe)
                                     .frame(width: 160)
@@ -83,12 +47,6 @@ struct CreateRecipeView: View {
                                         Label("Delete", systemImage: "trash")
                                         }
                                     }
-                                
-//                                    .onLongPressGesture {
-//                                        selectedRecipe = recipe
-//                                        showDeleteConfirmation = true
-//                                    }
-//                                    .frame(width: 160)
                             }
                         }
                     }
@@ -109,7 +67,6 @@ struct CreateRecipeView: View {
                 }
                 .background(Color(.systemPink))
                 .cornerRadius(10)
-//                .padding(.top, 24)
                 .padding(.horizontal, 20)
                 .navigationViewStyle(.stack)
                 .fullScreenCover(isPresented: $showAddRecipe){

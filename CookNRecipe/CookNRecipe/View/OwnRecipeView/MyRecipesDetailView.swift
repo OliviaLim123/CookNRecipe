@@ -63,12 +63,25 @@ struct MyRecipesDetailView: View {
 
 #Preview {
     MyRecipesDetailView(recipe: CustomOwnRecipe(
-        name: "Mock Recipe",
+        name: "Spaghetti Bolognese",
         image: nil,
-        description: "example",
-        ingredients: "Testing",
-        instructions: "hello",
-//        category: Category.main.rawValue,
-        datePublished: ""))
+        description: "A delicious Italian pasta dish with a rich and flavorful meat sauce.",
+        ingredients: """
+        - 200g Spaghetti
+        - 100g Ground Beef
+        - 1 Onion, chopped
+        - 2 Garlic cloves, minced
+        - 400g Canned tomatoes
+        - 2 tbsp Olive oil
+        - Salt and pepper to taste
+        """,
+        instructions: """
+        1. Cook the spaghetti in boiling salted water according to package instructions.
+        2. Heat olive oil in a pan and sauté onions and garlic until soft.
+        3. Add ground beef and cook until browned.
+        4. Pour in canned tomatoes, season with salt and pepper, and simmer for 20 minutes.
+        5. Toss the spaghetti with the sauce and serve hot.
+        """,
+        datePublished: "September 14, 2024"))
         .environmentObject(OwnRecipeViewModel())
 }

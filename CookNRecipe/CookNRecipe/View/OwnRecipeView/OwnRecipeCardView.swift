@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct OwnRecipeCardView: View {
-//    @ObservedObject private var recipeVM: RecipeViewModel
     var recipe: CustomOwnRecipe
     
     var body: some View {
@@ -25,7 +24,6 @@ struct OwnRecipeCardView: View {
                             .foregroundStyle(.white)
                             .shadow(color: .black, radius: 3, x:0, y:0)
                             .frame(maxWidth: 136)
-//                            .padding()
                         
                     }
             } else {
@@ -42,7 +40,6 @@ struct OwnRecipeCardView: View {
                             .foregroundStyle(.white)
                             .shadow(color: .black, radius: 3, x:0, y:0)
                             .frame(maxWidth: 136)
-//                            .padding()
                     }
             }
         }

@@ -11,7 +11,6 @@ import PhotosUI
 struct AddRecipeView: View {
     @State private var name: String = ""
     @State private var image: UIImage? = nil
-//    @State private var selectedCategory: Category = Category.main
     @State private var description: String = ""
     @State private var ingredients: String = ""
     @State private var instructions: String = ""
@@ -33,15 +32,6 @@ struct AddRecipeView: View {
                     Section(header: Text("Name")){
                         TextField("Recipe Name", text: $name)
                     }
-//                    Section(header: Text("Category")){
-//                        Picker("Category", selection: $selectedCategory){
-//                            ForEach(Category.allCases) { category in
-//                                Text(category.rawValue)
-//                                    .tag(category)
-//                            }
-//                        }
-//                        .pickerStyle(.menu)
-//                    }
                     Section(header: Text("Image")) {
                         if let image = image {
                             Image(uiImage: image)
@@ -113,53 +103,8 @@ struct AddRecipeView: View {
         }
         .navigationViewStyle(.stack)
     }
-//    private func saveRecipe() {
-//           let now = Date()
-//           let dateFormatter = DateFormatter()
-//           dateFormatter.dateFormat = "yyyy-MM-dd"
-//           let datePublished = dateFormatter.string(from: now)
-//           
-//           let imageData = image?.jpegData(compressionQuality: 0.8) ?? Data()
-//
-//           let recipe = OwnRecipe(
-//               name: name,
-//               image: imageData,
-//               description: description,
-//               ingredients: ingredients,
-//               instructions: instructions,
-//               category: selectedCategory.rawValue,
-//               datePublished: datePublished
-//           )
-//           
-//           // Add recipe to the view model
-//           ownRecipeVM.addRecipe(recipe: recipe)
-//       }
 }
 
-#Preview {
-    AddRecipeView()
-        .environmentObject(OwnRecipeViewModel())
-}
-
-//extension AddRecipeView {
-//    private func saveRecipe() {
-//        //Get the current date
-//        let now = Date()
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-mm-dd"
-//        let datePublished = dateFormatter.string(from: now)
-//        print(datePublished)
-//        let imageData = image?.jpegData(compressionQuality: 0.8) ?? Data()
-//        let recipe = OwnRecipe(
-//            name: name, image: imageData,
-//            description: description,
-//            ingredients: ingredients,
-//            instructions: instructions,
-//            category: selectedCategory.rawValue,
-//            datePublished: datePublished)
-//            ownRecipeVM.addRecipe(recipe: recipe)
-//    }
-//}
 extension AddRecipeView {
     private func saveRecipe() {
         // Get the current date
@@ -178,11 +123,15 @@ extension AddRecipeView {
             description: description,
             ingredients: ingredients,
             instructions: instructions,
-//            category: selectedCategory.rawValue,
             datePublished: datePublished
         )
         
         // Save recipe using the view model
         ownRecipeVM.addRecipe(recipe: recipe)
     }
+}
+
+#Preview {
+    AddRecipeView()
+        .environmentObject(OwnRecipeViewModel())
 }
